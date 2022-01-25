@@ -1,9 +1,6 @@
 package com.platzi.functional._04_functional;
 
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-import java.util.function.UnaryOperator;
+import java.util.function.*;
 
 public class StringFunctions {
     public static void main(String[] args) {
@@ -18,6 +15,8 @@ public class StringFunctions {
         /*Takes two parameters and return a new one*/
         BiFunction<Integer, Integer, Integer> product =
                 (x,y) -> x * y;
+        /*If all parameters are of the same type, it can be done with a BinaryOperator*/
+        BinaryOperator<Integer> product2 = (x,y) -> x * y;
         System.out.println(product.apply(5,3));
 
         BiFunction<String, Integer, String > leftPad =
