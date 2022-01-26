@@ -13,7 +13,7 @@ public class _01_Operator {
      */
     public static void main(String[] args) {
         List<String> names = new LinkedList<>();
-        names.add("Fer");
+        names.add("             Fer");
         names.add("Orly");
         names.add("Sier");
         names.add("Chris");
