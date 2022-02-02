@@ -33,8 +33,33 @@ public class Streams {
         Stream<String> justJavaCourses = coursesStream.filter(course -> course.contains("Java"));
 
         emphasisCourses.forEach(System.out::println);
+
+        Stream<String> coursesStream2 = courseList.stream();
+        /*If there's an object that implements collection interface, it is possible to create a Stream*/
+
+        /*coursesStream2.map(course -> course + "!!!")
+                .filter(course -> course.contains("Java"))
+                .forEach(System.out::println);*/
+
+        /*There are intermediate and finalization function for streams
+        * Intermediate  functions, return a new modified Stream (Stream object)
+        * Finalization one, returns nothing instead (Void)*/
+
+        addOperator(
+                coursesStream2
+                        .map(course -> course + "!!")
+                        .filter(course -> course.contains("Java"))
+        ).forEach(System.out::println);
+
+    }
+
+    static <T> Stream<T> addOperator(Stream<T> stream){
+        return stream.peek(data -> System.out.println("Date: " + data));
+        /*Peek doesn't modify the incoming Stream, just show it's data*/
     }
 
     //Note that steams get "consumed" if they are operated with any method (they have durability 1 xD)
     //That's the error in line 33
+
+
 }
