@@ -1,2 +1,2 @@
-# JavaSE-Functional-platzi
-Codigo de ejemplos para el curso sobre programacion funcional de Platzi
+# job-search
+Busqueda de trabajo en job.github.com desde terminal con Java

@@ -1,5 +1,32 @@
-allprojects {
-    apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'application'
+}
 
-    sourceCompatibility = 1.8
+group 'com.platzi'
+version '0.1.0'
+
+sourceCompatibility = 1.8
+
+application {
+    mainClassName = "com.platzi.jobsearch.JobSearch"
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/com.beust/jcommander
+    /*Transforms from console responses to objects in java*/
+    implementation group: 'com.beust', name: 'jcommander', version: '1.78'
+
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-core
+    /*Make web petitions, returning a Json*/
+    implementation group: 'io.github.openfeign', name: 'feign-core', version: '10.7.0'
+
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-gson
+    /*Transforms Json into java objects*/
+    implementation group: 'io.github.openfeign', name: 'feign-gson', version: '10.7.0'
+
 }
